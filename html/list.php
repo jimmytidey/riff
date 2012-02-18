@@ -1,4 +1,9 @@
 <?
+
+error_reporting(E_ALL);
+ini_set('display_errors','On');
+set_time_limit (1000);
+
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 header('Content-type: application/json');
