@@ -11,7 +11,8 @@ grid.refresh = function() {
 		
 		//bind events to refreshed HTML 
 		$('.upload_icon').click(function() {
-			var bank_name = $(this).parent().prev('.bank_name').html();
+			var bank_name = $(this).parent().prevAll('.bank_name').html();
+
 			var bank_option_name = $(this).prev('.bank_option_name').html(); 
 			grid.newWindow(bank_name, bank_option_name);
 		});
