@@ -1,0 +1,260 @@
+	body {
+	
+		background-image:url(bg.png); 
+		background-repeat:repeat;
+	
+	}
+	
+	#container {
+		position:absolute;
+		width: 1100px; 
+		left:50%; 
+		margin-left:-550px; 
+		border:1px solid black; 
+		background-color:white;
+		padding-left:30px;
+		font-family: arial, helvetica; 
+		height: 1900px;
+		margin-bottom:20px;
+	}
+
+/* Home page ******************** */	
+	#home_page {
+		position:absolute;
+		width: 560px; 
+		left:50%; 
+		margin-left:-300px; 
+		border:1px solid black; 
+		background-color:white;
+		padding:10px 20px 30px 20px;
+		font-family: arial, helvetica; 
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+	}	
+
+	#home_page h3 {
+		margin-top:1em;
+		margin-bottom:3px;
+	}	
+		
+	
+	#title {
+		text-align:center;
+		margin:3px;
+	}
+	
+	#tag_line {
+		text-align:center;
+		margin-top:3px;
+	}
+	
+	#save_project_button {
+		border:1px solid #456a6d;
+		background-color:#e6eced;
+		margin-left:5px;
+		height:23px;
+	}	
+	
+	#controls {
+		margin-bottom:40px; 
+		-moz-box-shadow: 3px 3px 4px #ccc;
+		-webkit-box-shadow: 3px 3px 4px#ccc;
+		box-shadow: 3px 3px 4px #ccc;			
+		margin-bottom: 30px;
+		padding: 10px;
+		width: 1020px;		
+	    border:1px solid black;
+	}
+	
+	#explore_launch {
+	    float: right;
+	    margin-top: -34px;	
+	}
+	
+	#refresh {
+		position:relative;	
+	}
+	
+	
+	#edit_grid {
+		margin-bottom:50px;
+		width:1000px;
+		border:1px solid black;
+		padding:20px;
+		-moz-box-shadow: 3px 3px 4px #ccc;
+		-webkit-box-shadow: 3px 3px 4px#ccc;
+		box-shadow: 3px 3px 4px #ccc;
+		min-height:200px;
+		padding-top:65px;
+	}
+	
+	
+	#flash {
+	    left: 275px;
+	    position: absolute;
+	    top: 188px;
+	    z-index: 10;
+	}
+	
+	.bank {
+		background-color:#e6eced;
+		padding:5px;
+		margin-bottom:10px;
+		border:1px solid #456a6d;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	
+	.bank_option {
+		clear:both; 
+		height:26px;
+	}
+	
+	
+	.bank_name {
+		clear:both; 
+		margin-top:0px;
+		margin-bottom:0px;
+		font-size:12px;
+	}
+	
+	.bank_option_name {
+		width:100px; 
+		float:left;
+		margin:0px;
+		font-size:11px;
+		margin-top:2px;
+
+	}
+
+	.upload_icon {
+		float:left;
+	}
+	
+	.volume {
+		width:70px; 
+		float:left; 
+	}
+	
+	.loop_option {
+		float: left;
+		width: 14px;
+		margin-top: 2px;
+		margin-left: 3px;
+	}
+	
+	.overplay {
+		float: left;
+		margin-left: 2px;
+		margin-top: 2px;
+		width: 14px;
+		margin-right:41px;
+	}
+	
+	#loop_label {
+	    -moz-transform: rotate(-90deg);
+		-webkit-transform: rotate(-90deg);
+	    font-size: 13px;
+	    left: 260px;
+	    position: absolute;
+	    top: 190px;
+	    width: 30px;
+	}	
+	
+	#overplay_label {
+	    -moz-transform: rotate(-90deg);
+		-webkit-transform: rotate(-90deg);
+	    font-size: 13px;
+	    left: 240px;
+	    position: absolute;
+	    top: 190px;
+	    width: 30px;
+	}	
+	
+	.bank_option .switches div {
+		width:10px;
+		height:10px;
+		border:1px solid #7FA5C4; 
+		position:absolute;
+		cursor:pointer; 
+	}
+	
+	.switches {
+		position:absolute;
+		z-index:200;
+		left:322px;
+		margin-top:4px;
+	}
+	
+
+	.switch_0, .switch_ {
+		background-color:#fff;
+	}
+	
+	.switch_1 {
+		background-color:#ddd;
+	}
+	
+	.switch_2 {
+		background-color:#999;
+	}
+	
+	.switch_3 {
+		background-color:#000;
+	}	
+
+	#bank_add_btn {
+		margin-top:30px;
+		width:80px;
+	}	
+	
+	#bank_add_name {
+		width:150px;
+		font-size:10px;
+		font-weight:strong;
+	}
+		
+	.option_add {
+		top:-1px;
+		font-size:10px;
+		cursor:pointer;
+	}
+	
+	.option_add_name {
+		width:150px;
+		font-size:10px;
+		padding:0px;
+		height:10px;		
+	}	
+	
+	#explorer {	
+		width:1040px;
+		height:400px; 
+		margin-bottom:40px;
+		-moz-box-shadow: 3px 3px 4px #ccc;
+		-webkit-box-shadow: 3px 3px 4px#ccc;
+		box-shadow: 3px 3px 4px #ccc;
+		position:absolute;
+		z-index:2000;	
+	}
+	
+
+	
+	#volume_label {
+	    font-size: 13px;
+	    left: 177px;
+	    position: absolute;
+	    top: 200px;
+	}
+	
+	#view_player_link {
+		float:right;
+		margin-top:-36px;
+		margin-right:160px;
+	}
+	
+	
+	.ui-slider-handle {
+		width:3px !important;
+		margin-left: -5px !important;
+	}	

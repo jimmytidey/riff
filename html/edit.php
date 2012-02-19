@@ -29,11 +29,9 @@ include('header.php');
 
 	<script type="text/javascript" type="text/javascript" >var project_name = "<?=$project_name ?>";</script>
 	
-	<link rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.all.css">
+	<link rel="stylesheet" href="style/jquery-ui-1.8.17.custom.css">
 	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"> </script>
-
-	<!-- <script src="js/js/jquery-ui.custom.min.js" type="text/javascript"></script> -->
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
