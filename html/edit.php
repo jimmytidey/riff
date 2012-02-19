@@ -52,7 +52,7 @@ include('header.php');
 
 <div id='container'> 
 	
-	<h3><a href='/'>Back</a>  |  <span id='project_name'><?=$project_name ?></span> </h3> 
+	<h3><a href='	/'>Back</a>  |  <span id='project_name'><?=$project_name ?></span> </h3> 
 	
 	<div id='controls'> 
 		<form method="get" action="edit.php">
