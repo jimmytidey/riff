@@ -110,7 +110,7 @@ grid.bank_option_save = function(bank_option) {
 	grid.grid_option_json['volume'] = $(".volume", bank_option).slider( "option", "value" );
 	
 	if ($(".loop_option", bank_option).is(':checked')) {grid.grid_option_json['loop'] = 'true'} else {grid.grid_option_json['loop'] = 'false'};
-	if ($(".overplay", bank_option).is(':checked')) {grid.grid_option_json['overplay'] = 'true' alert('overplay')} else {grid.grid_option_json['overplay'] = 'false'};
+	if ($(".overplay", bank_option).is(':checked')) {grid.grid_option_json['overplay'] = 'true'} else {grid.grid_option_json['overplay'] = 'false'};
 	
 	//turn them into json 
 
