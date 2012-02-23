@@ -25,7 +25,7 @@ include('header.php');
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<title>Chance Acorn</title>
 	
-	<link rel='stylesheet' href="/style/style.css" >
+	<link rel='stylesheet' href="style/style.css" >
 
 	<script type="text/javascript" type="text/javascript" >var project_name = "<?=$project_name ?>";</script>
 	

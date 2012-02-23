@@ -1,6 +1,7 @@
 <p id='volume_label'>Volume</p>
-<p id='loop_label'>Loop</p>
+
 <p id='overplay_label'>Overplay</p>
+<p id='loop_label'>Loop</p>
 <?
 include('functions.php'); 
 
