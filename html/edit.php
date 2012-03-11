@@ -16,7 +16,6 @@ include('header.php');
 
 
 ?>
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -27,7 +26,7 @@ include('header.php');
 	
 	<link rel='stylesheet' href="style/style.css" >
 
-	<script type="text/javascript" type="text/javascript" >var project_name = "<?=$project_name ?>";</script>
+	<script type="text/javascript" >var project_name = "<?=$project_name ?>";</script>
 	
 	<link rel="stylesheet" href="style/jquery-ui-1.8.17.custom.css">
 	
@@ -37,11 +36,7 @@ include('header.php');
 
 	<script type="text/javascript" src='js/script.js' > </script>
 
-	<script type="text/javascript" src="js/swfobject.js"></script>
-	
-	<script type="text/javascript">
-		swfobject.registerObject("myFlashContent", "9.0.0");
-	</script>
+
 
 </head>
 
@@ -50,7 +45,7 @@ include('header.php');
 
 <div id='container'> 
 	
-	<h3><a href='	/'>Back</a>  |  <span id='project_name'><?=$project_name ?></span> </h3> 
+	<h3><a href='/'>Back</a>  |  <span id='project_name'><?=$project_name ?></span> </h3> 
 	
 	<div id='controls'> 
 		<form method="get" action="edit.php">
@@ -62,47 +57,24 @@ include('header.php');
 			</p>
 		</form >
 		
-		<a href='player.php?project_name=<?=$project_name ?>' target='_blank' id='view_player_link' >View the player</a>
+		<a href='player.php?project_name=<? echo urlencode($project_name) ?>' target='_blank' id='view_player_link' >View the player</a>
 		
 		<input type='button' id='explore_launch' value='Launch file manager' />
 	</div>
-	
-	<!-- <input type='button' id='refresh' value='refresh' /> -->
-	
-	<div id='instructions'>
-		<p></p>
-			
-	</div>
 
+	<div id='flash'>
+
+		<object type="application/x-shockwave-flash"  data="random_seed_composer.swf?project_info_location=list.php?project_name=<? echo rawurlencode($project_name) ?>"  width="760" height="2000">
+			<param name='wmode' value='transparent'>
+		</object>
+		
+	</div>
 	
 	
 	
 	<div id='edit_grid' ></div> 
 	
-	<div id='flash'>
 
-		<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="760" height="1000" id="myFlashContent">
-				<param name="movie" value="random_seed_composer.swf?project_info_location=list.php?project_name=<?= $user_id.'/'.$project_name ?>" />
-				<param name="quality" value="medium" />
-		
-				<param name="wmode" value="transparent" />
-				<param name="allownetworking" value="all" />
-				<!--[if !IE]>-->
-				<object type="application/x-shockwave-flash" data="random_seed_composer.swf?project_info_location=list.php?project_name=<?=$project_name ?>" width="760" height="1000" >
-					<param name="quality" value="medium" />
-				
-					<param name="wmode" value="transparent" />
-					<param name="allownetworking" value="all" />
-				<!--<![endif]-->
-					<a href="http://www.adobe.com/go/getflashplayer">
-						<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
-					</a>
-				<!--[if !IE]>-->
-				</object>
-				<!--<![endif]-->
-			</object>
-		
-	</div>	
 </div>
 			
 <script type="text/javascript">

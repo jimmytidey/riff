@@ -25,6 +25,7 @@ foreach ($bank_array as $bank) {
 	
 	$j = 0;
 	
+	//for banks with bank options 
 	if (count($bank_option_array)>0) {
 	
 		foreach ($bank_option_array as $bank_option) {
@@ -48,6 +49,14 @@ foreach ($bank_array as $bank) {
 			$j++;
 		}	
 	}
+	
+	//if there are no bank options
+	else { 
+		$json['banks'][$i]['bank_name'] = $bank; 
+		$json['banks'][$i]['bank_options'][0]['bank_option_name'] = 0;
+		$json['banks'][$i]['bank_options'][0]['file_location'] = 0;
+	}
+	
 	$i++;
 }
 

@@ -1,6 +1,6 @@
 	body {
 	
-		background-image:url(bg.png); 
+		background-color:#F4F1E4; 
 		background-repeat:repeat;
 	
 	}
@@ -17,6 +17,8 @@
 		height: 1900px;
 		margin-bottom:20px;
 	}
+
+object { outline:none}
 
 /* Home page ******************** */	
 	#home_page {
@@ -92,7 +94,7 @@
 	#flash {
 	    left: 275px;
 	    position: absolute;
-	    top: 188px;
+	    top: 190px;
 	    z-index: 10;
 	}
 	
@@ -132,7 +134,7 @@
 	}
 	
 	.volume {
-		width:70px; 
+		width:60px; 
 		float:left; 
 	}
 	
@@ -155,7 +157,7 @@
 	    -moz-transform: rotate(-90deg);
 		-webkit-transform: rotate(-90deg);
 	    font-size: 13px;
-	    left: 240px;
+	    left: 230px;
 	    position: absolute;
 	    top: 190px;
 	    width: 30px;
@@ -165,7 +167,7 @@
 	    -moz-transform: rotate(-90deg);
 		-webkit-transform: rotate(-90deg);
 	    font-size: 13px;
-	    left: 260px;
+	    left: 250px;
 	    position: absolute;
 	    top: 190px;
 	    width: 30px;
@@ -242,7 +244,7 @@
 	
 	#volume_label {
 	    font-size: 13px;
-	    left: 177px;
+	    left: 167px;
 	    position: absolute;
 	    top: 200px;
 	}
