@@ -15,7 +15,7 @@ if (!empty($_POST['project_name']))
 		//make the project folder
 		mkdir('projects/'.$user_id.'/'.$project_name, 0777);
 		
-		//copt template into the file 
+		//copy template into the file 
 		$src = "TEMPLATE/*";
 		$dest = 'projects/'.$user_id.'/'.$project_name;
 

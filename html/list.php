@@ -35,7 +35,6 @@ foreach ($bank_array as $bank) {
 			$json['banks'][$i]['bank_options'][$j]['bank_option_name'] = $bank_option;
 		
 			//find the name of the wav file for this directory 
-		
 			$audio_file_array = structure_list('projects/'.$project_name."/".$bank."/".$bank_option, "file");
 		
 			if (count($audio_file_array) > 0) {
