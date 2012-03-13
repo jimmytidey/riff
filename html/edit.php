@@ -64,7 +64,7 @@ include('header.php');
 
 	<div id='flash'>
 
-		<object type="application/x-shockwave-flash"  data="random_seed_composer.swf?project_info_location=list.php?project_name=<? echo rawurlencode($project_name) ?>"  width="760" height="2000">
+		<object type="application/x-shockwave-flash"  data="random_seed_composer.swf?project_info_location=list.php?project_name=<? echo rawurlencode($project_name) ?>"  width="760" height="2600">
 			<param name='wmode' value='transparent'>
 		</object>
 		
