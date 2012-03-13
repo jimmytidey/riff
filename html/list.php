@@ -27,21 +27,26 @@ foreach ($bank_array as $bank) {
 	
 	//for banks with bank options 
 	if (count($bank_option_array)>0) {
-	
+		
+		
 		foreach ($bank_option_array as $bank_option) {
-		
-			$json['banks'][$i]['bank_name'] = $bank; 
-			$json['banks'][$i]['bank_options'][$j] = read_json('projects/'.$project_name."/".$bank."/".$bank_option."/bank_option_info.json");
-			$json['banks'][$i]['bank_options'][$j]['bank_option_name'] = $bank_option;
-		
-			//find the name of the wav file for this directory 
+				
+			$data = read_json('projects/'.$project_name."/".$bank."/".$bank_option."/bank_option_info.json");
+			
+			
+			$order = $data['order'];
+			//$order = $i; 
+			$json['banks'][$i]['bank_options'][$order] = $data;
+			$json['banks'][$i]['bank_options'][$order]['bank_option_name'] = $bank_option;
+			
+			
+			//find the name of the audio file for this directory 
 			$audio_file_array = structure_list('projects/'.$project_name."/".$bank."/".$bank_option, "file");
 		
 			if (count($audio_file_array) > 0) {
 				foreach ($audio_file_array as $audio_file) {
-						
 					if ($audio_file != 'bank_option_info.json') {
-						$json['banks'][$i]['bank_options'][$j]['file_location'] = 'projects/'.$project_name."/".$bank."/".$bank_option."/".$audio_file; 
+						$json['banks'][$i]['bank_options'][$order]['file_location'] = 'projects/'.$project_name."/".$bank."/".$bank_option."/".$audio_file; 
 					}
 				}
 			}	
@@ -56,13 +61,13 @@ foreach ($bank_array as $bank) {
 		$json['banks'][$i]['bank_options'][0]['file_location'] = 0;
 	}
 	
+	//this to ensure output obeys the order parameter...
+	ksort($json['banks'][$i]['bank_options']);
+	
 	$i++;
 }
 
 print_r(json_encode($json));
-
-
-
 
 
 

@@ -1,5 +1,6 @@
 <?
 
+error_reporting(E_ALL);
 
 function structure_list($folder_name, $type) {
 	// open this directory 

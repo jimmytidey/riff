@@ -28,46 +28,62 @@ if (!empty($bank_array)) {
 		
 		//in each bank, find out which bank options are saved 
 		$bank_options = structure_list('projects/'.$project_name.'/'.$bank_name, 'dir');
+		$bank_option_array = array();
 		
 		if (!empty($bank_options)) {
-		
+			
+			//READ THE BANK OPTION FILES AND TURN THEM INTO AN ARRAY 
+			$j=0;
 			foreach ($bank_options as $bank_option_name) {
 				
 				//make bank_option_info.json if it doesn't exist yet 
 				if (!file_exists('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json")) {
 					
 					$padded_temp = array(); 
-					
 					$length_of_banks = $project_info['steps'];
-					
 					$padded_temp = array_pad($padded_temp, $length_of_banks, '0');  
-					
 					$bank_option_info['sequence'] = $padded_temp;  
 					$bank_option_info['volume'] = 50;  
 					$bank_option_info['loop'] = 'false'; 
 					$bank_option_info['overplay'] = 'false'; 
-					
 					write_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json", $bank_option_info); 
-					
 				}
 				
 				//get the info file for this bank 
 				$bank_option_info = read_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json");  
-				 
 				
+				//add in the order if it isn't there yet...
+				if(!$bank_option_info['order']) {
+					$bank_option_info['order'] = $j; 
+					write_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json", $bank_option_info);
+				}
+				
+				$order = $bank_option_info['order']; 
+				
+				$bank_option_info['name'] = $bank_option_name;
+				$bank_option_array[$order] = $bank_option_info; 
+			}
+			$j++;
+			
+			ksort($bank_option_array);
+
+			
+			//GO THROUGH ARRAY AND DISPLAY IT 
+			foreach($bank_option_array as $bank_option_info) { 
 				//echo the name of this bank option 
-				echo "<div class='bank_option ".$bank_option_name."'><p class='bank_option_name'>".$bank_option_name."</p>";
+				echo "<div class='bank_option ".$bank_option_info['name']."'><p class='bank_option_name'>".$bank_option_info['name']."</p>";
+				
 					?>
 						<img src='resources/folder.png' class='upload_icon' />
 						<div class="volume" data-volume='<? echo $bank_option_info['volume'] ?>' ></div>
 						<input type="checkbox" name="loop" class='loop_option' data-state='<? echo $bank_option_info['loop']; ?>' <? if ($bank_option_info['loop']=='true') {echo "checked='checked'";} ?> /> 
 						<input type="checkbox" name="loop" class='overplay' data-state='<? echo $bank_option_info['overplay']; ?>' <? if ($bank_option_info['overplay']=='true') {echo "checked='checked'";} ?> />
-						
-						
+					
+					
 					<?
 					//loop through and draw each step 
 					$step_count = count($bank_option_info['sequence']);
-					
+				
 					?> <div class='switches'> <? 
 					for($step=0; $step < $step_count; $step++) {
 						$left = $step * 17 ; 
@@ -75,9 +91,12 @@ if (!empty($bank_array)) {
 					}				
 				echo "</div></div>"; 
 			}
+			
+			
 		}	
 		
-		echo "<input class='option_add_name' type='text' value='option name' /> <a class='option_add' >Add &raquo;</a></div>";		
+		echo "<input class='option_add_name' type='text' value='option name' /> <a class='option_add' >Add &raquo;</a></div>";	
+			
 	}
 }
 
