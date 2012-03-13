@@ -52,6 +52,7 @@ if (!empty($bank_array)) {
 				
 				//add in the order if it isn't there yet...
 				if(!isset($bank_option_info['order'])) {
+					echo "<h1>rewiting order!</h1>";
 					$bank_option_info['order'] = $j;
 					write_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json", $bank_option_info);
 				}

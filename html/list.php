@@ -31,10 +31,8 @@ foreach ($bank_array as $bank) {
 		foreach ($bank_option_array as $bank_option) {
 				
 			$data = read_json('projects/'.$project_name."/".$bank."/".$bank_option."/bank_option_info.json");
-			
-			
+				
 			$order = $data['order'];
-			//$order = $i; 
 			$json['banks'][$i]['bank_options'][$order] = $data;
 			$json['banks'][$i]['bank_options'][$order]['bank_option_name'] = $bank_option;
 			
