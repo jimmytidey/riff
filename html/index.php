@@ -17,8 +17,9 @@ if (!empty($_POST['project_name']))
 		
 		//copy template into the file 
 		$src = "TEMPLATE/*";
-		$dest = 'projects/'.$user_id.'/'.$project_name;
-
+		$dest = escapeshellarg('projects/'.$user_id.'/'.$project_name);
+		
+		shell_exec("chmod -R -f 777 $dest"); 
 		shell_exec("cp -r $src $dest");
 	}
 }

@@ -8,13 +8,9 @@ include('functions.php');
 $project_name = urldecode($_GET['project_name']); 
  
 // hack to ensure all the files are readable  
-
 $escaped_project_string = str_replace (' ',  '\ ', $project_name );
-
 $command_string = "chmod -R 777 projects/$escaped_project_string";
-
 shell_exec ($command_string);
-
 $project_info = read_json('projects/'.$project_name.'/project_info.json');
 
 // get a list of all the folders in the current project directory 
@@ -49,11 +45,13 @@ if (!empty($bank_array)) {
 					write_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json", $bank_option_info); 
 				}
 				
+			
 				//get the info file for this bank 
 				$bank_option_info = read_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json");  
 				
+				
 				//add in the order if it isn't there yet...
-				if(!$bank_option_info['order']) {
+				if(!isset($bank_option_info['order'])) {
 					$bank_option_info['order'] = $j;
 					write_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json", $bank_option_info);
 				}
