@@ -63,9 +63,9 @@ if (!empty($bank_array)) {
 				$j++;
 			}
 
-			print_R($bank_option_array);
+			print_r($bank_option_array);
 			ksort($bank_option_array);
-
+print_r($bank_option_array);
 			
 			//GO THROUGH ARRAY AND DISPLAY IT 
 			foreach($bank_option_array as $bank_option_info) { 
