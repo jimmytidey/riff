@@ -53,8 +53,8 @@ if (!empty($bank_array)) {
 				$bank_option_info = read_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json");  
 				
 				//add in the order if it isn't there yet...
-				if(!$bank_option_info['order']) {
-					$bank_option_info['order'] = $j; 
+				if(!$bank_option_info['order'] || $bank_option_info['order']== 0) {
+					$bank_option_info['order'] = $j;
 					write_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json", $bank_option_info);
 				}
 				
@@ -62,8 +62,9 @@ if (!empty($bank_array)) {
 				
 				$bank_option_info['name'] = $bank_option_name;
 				$bank_option_array[$order] = $bank_option_info; 
+				$j++;
 			}
-			$j++;
+
 			
 			ksort($bank_option_array);
 
