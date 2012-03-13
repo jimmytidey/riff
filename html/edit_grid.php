@@ -53,7 +53,7 @@ if (!empty($bank_array)) {
 				$bank_option_info = read_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json");  
 				
 				//add in the order if it isn't there yet...
-				if(!$bank_option_info['order'] || $bank_option_info['order']== 0) {
+				if(!$bank_option_info['order']) {
 					$bank_option_info['order'] = $j;
 					write_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json", $bank_option_info);
 				}
