@@ -63,7 +63,7 @@ if (!empty($bank_array)) {
 				$j++;
 			}
 
-			
+			print_R($bank_option_array);
 			ksort($bank_option_array);
 
 			

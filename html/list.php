@@ -60,7 +60,7 @@ foreach ($bank_array as $bank) {
 		$json['banks'][$i]['bank_options'][0]['file_location'] = 0;
 	}
 	
-	print_r($json['banks'][$i]['bank_options']);
+	
 	//this to ensure output obeys the order parameter...
 	ksort($json['banks'][$i]['bank_options']);
 	
