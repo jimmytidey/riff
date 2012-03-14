@@ -42,21 +42,14 @@ if (!empty($bank_array)) {
 					$bank_option_info['volume'] = 50;  
 					$bank_option_info['loop'] = 'false'; 
 					$bank_option_info['overplay'] = 'false'; 
+					$order = count($bank_options) + 2; 
+					$bank_option_info['order'] = $order;
 					write_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json", $bank_option_info); 
 				}
 				
 			
 				//get the info file for this bank 
 				$bank_option_info = read_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json");  
-				
-				
-				//add in the order if it isn't there yet...
-				if(!isset($bank_option_info['order'])) {
-					echo "<h1>rewiting order!</h1>";
-					$bank_option_info['order'] = $j;
-					write_json('projects/'.$project_name.'/'.$bank_name."/".$bank_option_name."/bank_option_info.json", $bank_option_info);
-				}
-				
 				$order = $bank_option_info['order']; 
 				
 				$bank_option_info['name'] = $bank_option_name;
@@ -68,10 +61,11 @@ if (!empty($bank_array)) {
 			ksort($bank_option_array);
 
 			
-			//GO THROUGH ARRAY AND DISPLAY IT 
+			//GO THROUGH ARRAY AND DISPLAY IT
+			$id_no = 1;  
 			foreach($bank_option_array as $bank_option_info) { 
 				//echo the name of this bank option 
-				echo "<div class='bank_option ".$bank_option_info['name']."'><p class='bank_option_name'>".$bank_option_info['name']."</p>";
+				echo "<div data-option-no='".$id_no."' class='bank_option ".$bank_option_info['name']."'><p class='bank_option_name'>".$bank_option_info['name']."</p>";
 				
 					?>
 						<img src='resources/folder.png' class='upload_icon' />
@@ -90,6 +84,7 @@ if (!empty($bank_array)) {
 						echo "<div style='left:".$left."px;'  class='switch_".$bank_option_info['sequence'][$step]."' data-state='".$bank_option_info['sequence'][$step]."'></div>";  
 					}				
 				echo "</div></div>"; 
+				$id_no++;
 			}
 			
 			
