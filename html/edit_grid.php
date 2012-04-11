@@ -62,7 +62,7 @@ if (!empty($bank_array)) {
 
 			
 			//GO THROUGH ARRAY AND DISPLAY IT
-			$id_no = 1;  
+			$id_no = 17;  
 			foreach($bank_option_array as $bank_option_info) { 
 				//echo the name of this bank option 
 				echo "<div data-option-no='".$id_no."' class='bank_option ".$bank_option_info['name']."'><p class='bank_option_name'>".$bank_option_info['name']."</p>";
