@@ -52,7 +52,9 @@ if (!empty($_POST['project_name']))
 	// get each entry
 	$folder_array = structure_list('projects/'.$user_id.'/', 'dir');
 	
-	if (count($folder_array) > 0 ) { 
+	
+	
+	if (!empty($folder_array)) { 
     	foreach($folder_array as $project) {
 		
     		$encoded_name = urlencode($user_id.'/'.$project);
