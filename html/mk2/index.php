@@ -32,6 +32,17 @@ if (!empty($_POST['project_name']))
 
 
 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+
+	<link rel='stylesheet' href="style/style.css" >
+</head>
+<body>
+
+
 <div id='home_page'> 
 	
 	<h1 id='title'>MK 2 - RIFFF</h1>
@@ -51,8 +62,7 @@ if (!empty($_POST['project_name']))
 
 	// get each entry
 	$folder_array = structure_list('projects/'.$user_id.'/', 'dir');
-	
-	
+		
 	
 	if (!empty($folder_array)) { 
     	foreach($folder_array as $project) {

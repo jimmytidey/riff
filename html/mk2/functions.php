@@ -10,7 +10,7 @@ function structure_list($folder_name, $type) {
 	// get each entry
 	while($entryName = readdir($myDirectory)) {
 
-		if ((substr($entryName, 0, 1) != ".") && $entryName !='recycle_bin' && $entryName !='explorer' && $entryName !='project_info' && $entryName !='bank_option_info'  && filetype($folder_name."/".$entryName) == $type) {
+		if ((substr($entryName, 0, 1) != ".") && $entryName !='recycle_bin' && $entryName !='list.json' && $entryName !='project_info' && $entryName !='bank_option_info'  && filetype($folder_name."/".$entryName) == $type) {
  
 			$dirArray[] = $entryName;	
 		}
@@ -32,8 +32,8 @@ function write_json($file_location, $json) {
 
 function read_json($file_location) {
 	$data = file_get_contents($file_location); 
-	$return = json_decode($data, true); 
-	return($return); 
+	//$return = json_decode($data, true); 
+	return($data); 
 	
 }
 
