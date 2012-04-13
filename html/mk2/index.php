@@ -2,7 +2,7 @@
 include('header.php');
 include('functions.php'); 
 
-if (!is_dir('projects/'.$user_id) { 
+if (!is_dir('projects/'.$user_id)) { 
     mkdir('projects/'.$user_id.'/', 0777);    
 }
 
