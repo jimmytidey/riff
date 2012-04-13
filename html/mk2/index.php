@@ -3,7 +3,7 @@ include('header.php');
 include('functions.php'); 
 
 if (!is_dir('projects/'.$user_id)) { 
-    mkdir('projects/'.$user_id.'/', 0777);    
+    mkdir('projects/'.$user_id, 0777);    
 }
 
 if (!empty($_POST['project_name'])) 
@@ -52,14 +52,19 @@ if (!empty($_POST['project_name']))
 	// get each entry
 	$folder_array = structure_list('projects/'.$user_id.'/', 'dir');
 	
-	
-	foreach($folder_array as $project) {
+	if (count($folder_array) > 0 ) { 
+    	foreach($folder_array as $project) {
 		
-		$encoded_name = urlencode($user_id.'/'.$project);
+    		$encoded_name = urlencode($user_id.'/'.$project);
 		
-		echo "<a href='edit.php?project_name=$encoded_name'>$project</a><br/>";
+    		echo "<a href='edit.php?project_name=$encoded_name'>$project</a><br/>";
 	
-	}
+    	}
+    }	
+    
+    else { 
+        echo "You don't have any projects yet";
+    }
 	
 	
 	?>
