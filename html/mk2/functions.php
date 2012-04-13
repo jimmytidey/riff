@@ -25,7 +25,7 @@ function structure_list($folder_name, $type) {
 
 function write_json($file_location, $json) {
 	$fp = fopen($file_location, 'w');
-	fwrite($fp, json_encode($json));
+	fwrite($fp, $json);
 	fclose($fp);
 }
 

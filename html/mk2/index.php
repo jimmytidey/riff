@@ -16,7 +16,7 @@ if (!empty($_POST['project_name']))
 		mkdir('projects/'.$user_id.'/'.$project_name, 0777);
 		
 		//copy template into the file 
-		$src = "TEMPLATE/*";
+		$src = "list.jso";
 		$dest = escapeshellarg('projects/'.$user_id.'/'.$project_name);
 		shell_exec("chmod -R -f 777 $dest"); 
 		shell_exec("cp -r $src $dest");
@@ -26,14 +26,7 @@ if (!empty($_POST['project_name']))
 ?>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
-	<link rel='stylesheet' href="style/style.css" >
-</head>
-<body> 
 
 <div id='home_page'> 
 	
