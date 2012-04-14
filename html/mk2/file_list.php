@@ -9,7 +9,9 @@ if(!isset($user_id)) {
 }
 
 $list = structure_list("projects/$user_id/$project_name", 'file');
-$json = json_encode($list);
+$json = array();
+$json['files'] = $list;
+$json = json_encode($json);
 
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
