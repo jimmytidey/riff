@@ -4,6 +4,10 @@ include('functions.php');
 // get the project name from the get string 
 $project_name = $_GET['project_name'];
 $json = stripslashes(urldecode($_GET['json']));
+
+if(!isset($user_id)) { 
+    $user_id = 'tom';
+}
  	
 write_json("projects/$user_id/$project_name/list.json", $json);
 
